@@ -1,0 +1,25 @@
+
+<div class="container h-full w-full p-2 mx-auto">
+<app-search-bar (search)="searchUser($event)"></app-search-bar>
+
+<app-user-details *ngIf="flag1 === 1" [user]="user" ></app-user-details>
+
+<app-repo-list *ngIf="flag2 === 1" [repos]="repos"></app-repo-list>
+
+<div *ngIf="loading === 1" class="animate-pulse">
+  <div class="flex flex-row gap-2">
+    <div class="border border-gray-300 bg-slate-50 rounded px-4 py-2 mt-2 h-48 w-[30%] animate-pulse"></div>
+    <div class="border border-gray-300 bg-slate-50 rounded px-4 py-2 mt-2 h-48 w-[70%] animate-pulse"></div>
+  </div>
+    <div class="border border-gray-300 bg-slate-50 rounded px-4 py-2 mt-2 h-48 w-full animate-pulse"></div>
+</div>
+
+<div class="w-fit h-full mx-auto place-content-center mt-6" *ngIf="loading === 2">
+  <h1 class="text-center font-medium from-neutral-700 text-2xl">Sorry, this user has no repository</h1>
+</div>
+
+<div class="w-fit h-full mx-auto place-content-center mt-6" *ngIf="loading === 3">
+  <h1 class="text-center font-medium from-neutral-700 text-2xl">Sorry, user not found</h1>
+</div>
+
+</div>
