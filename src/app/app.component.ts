@@ -25,7 +25,6 @@ export class AppComponent {
     this.apiService.getUser(username).subscribe((user: any) => {
       this.user = user;
       this.flag1=1;
-      console.log("user",user);
       if(this.user.length === 0)
         {
           this.loading = 3;
@@ -41,7 +40,6 @@ export class AppComponent {
 
     this.apiService.getUserRepos(username).subscribe((repos: any) => {
       this.repos = repos;
-      console.log("user repos",this.repos);
       this.flag2=1;
       if(this.repos.length ===0)
       {
